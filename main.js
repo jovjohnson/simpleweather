@@ -60,12 +60,13 @@ function init() {
 
   function displayWeather() {
     var $temp = $('<p>' + temperature + '°' + '</p>');
-	  $('.current-weather').append($temp);
-	  $temp.addClass('temperature');
-
     var $conditions = $('<p>' + conditions + '</p>');
-    $('.conditions-space').html($conditions);
-    $conditions.addClass('conditions');
+    var $humidity = $('<p>' + humidity + '%' + ' ' + 'humidity' + '</p>');
+
+    $('.temp').append($temp);
+	  $temp.addClass('temperature');
+    $('.conditions-space').append($conditions);
+    $('.conditions-space').append($humidity);
   }
 
 
