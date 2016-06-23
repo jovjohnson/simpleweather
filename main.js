@@ -7,6 +7,7 @@ function init() {
   var name;
   var temperature;
   var humidity;
+  var conditions;
 
   if("geolocation" in navigator) {
     var n = navigator.geolocation;
@@ -41,8 +42,10 @@ function init() {
        method: 'GET',
        url: weatherUrl,
        success: function(data) {
+
+         console.log('data:', data);
          name = data.name;
-         temperature = data.main.temp;
+         temperature = Math.round(data.main.temp);
          humidity = data.main.humidity;
          conditions = data.weather[0].main;
          displayWeather();
