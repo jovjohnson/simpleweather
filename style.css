@@ -44,9 +44,9 @@ body {}
   border-radius: 5px 0px 0px 5px;
 }
 
-.wi-day-sunny {
+.wi {
   float: right;
-  font-size: 75px;
+  font-size: 55px;
   margin: 15px;
   margin-right: 18px;
   color: #ead156;
