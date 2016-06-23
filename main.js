@@ -47,7 +47,8 @@ function init() {
          name = data.name;
          temperature = Math.round(data.main.temp);
          humidity = data.main.humidity;
-         conditions = data.weather[0].main;
+         conditions = data.weather[0].description;
+         console.log(conditions);
          displayWeather();
       },
        error: function(error) {
@@ -59,8 +60,12 @@ function init() {
 
   function displayWeather() {
     var $temp = $('<p>' + temperature + '°' + '</p>');
-	   $('.current-weather').html($temp);
-	    $temp.addClass('temperature');
+	  $('.current-weather').append($temp);
+	  $temp.addClass('temperature');
+
+    var $conditions = $('<p>' + conditions + '</p>');
+    $('.conditions-space').html($conditions);
+    $conditions.addClass('conditions');
   }
 
 
