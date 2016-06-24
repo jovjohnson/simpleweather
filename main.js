@@ -62,11 +62,18 @@ function init() {
     var $temp = $('<p>' + temperature + '°' + '</p>');
     var $conditions = $('<p>' + conditions + '</p>');
     var $humidity = $('<p>' + humidity + '%' + ' ' + 'humidity' + '</p>');
+    var $icon = $('<i>' + '</i>');
 
     $('.temp').append($temp);
 	  $temp.addClass('temperature');
     $('.conditions-space').append($conditions);
     $('.conditions-space').append($humidity);
+    $('body').append($icon);
+
+    if(conditions === 'few clouds') {
+      $icon.addClass('wi');
+      $icon.addClass('wi-day-sunny');
+    }
   }
 
 
