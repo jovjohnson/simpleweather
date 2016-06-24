@@ -57,3 +57,8 @@ h1 {
   margin-right: 18px;
   color: #ead156;
 }
+
+#submit {
+  background: #69a9d3;
+  border: none;
+}
