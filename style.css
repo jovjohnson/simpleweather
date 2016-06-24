@@ -6,6 +6,10 @@ h1 {
   font-size: 65px;
 }
 
+#enter-city {
+  font-size: 18px;
+}
+
 .current-weather {
   position: absolute;
   margin: auto;
