@@ -68,12 +68,12 @@ function init() {
 	  $temp.addClass('temperature');
     $('.conditions-space').append($conditions);
     $('.conditions-space').append($humidity);
-    $('body').append($icon);
+    $('.current-weather').append($icon);
 
-    if(conditions === 'few clouds') {
-      $icon.addClass('wi');
-      $icon.addClass('wi-day-sunny');
-    }
+    // if(conditions === 'few clouds') {
+    //   $icon.addClass('wi');
+    //   $icon.addClass('wi-day-sunny');
+    // }
   }
 
 
