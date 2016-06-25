@@ -4,7 +4,7 @@ $(document).ready(init);
 
 function init() {
 
-  initMap();
+  // initMap();
 
   var name;
   var temperature;
@@ -17,12 +17,9 @@ function init() {
     n.getCurrentPosition(success, failure);
 
     function success(position) {
-
       var mylat = Math.floor(position.coords.latitude);
       var mylong = Math.floor(position.coords.longitude);
-
-      console.log(mylat, mylong);
-
+      // console.log(mylat, mylong);
       getWeather(mylat, mylong);
     }
 
@@ -44,8 +41,6 @@ function init() {
        method: 'GET',
        url: weatherUrl,
        success: function(data) {
-
-         console.log('data:', data);
          name = data.name;
          temperature = Math.round(data.main.temp);
          humidity = data.main.humidity;
@@ -66,26 +61,28 @@ function init() {
     var $humidity = $('<p>' + humidity + '%' + ' ' + 'humidity' + '</p>');
     var $icon = $('<i>' + '</i>');
 
+    $icon.addClass('wi');
+
+
     $('.temp').append($temp);
 	  $temp.addClass('temperature');
     $('.conditions-space').append($conditions);
     $('.conditions-space').append($humidity);
-    $('.current-weather').append($icon);
+    $('current-weather').append($icon);
 
-    // if(conditions === 'few clouds') {
-    //   $icon.addClass('wi');
-    //   $icon.addClass('wi-day-sunny');
-    // }
+    if(conditions === 'few clouds' || conditions === 'clear sky') {
+      $icon.addClass('wi-day-sunny');
+    }
   }
 
-  function initMap() {
-  // Create a map object and specify the DOM element for display.
-      var map = new google.maps.Map(document.getElementById('map'), {
-        center: {lat: -34.397, lng: 150.644},
-        scrollwheel: false,
-        zoom: 8
-      });
-}
+//   function initMap() {
+//   // Create a map object and specify the DOM element for display.
+//       var map = new google.maps.Map(document.getElementById('map'), {
+//         center: {lat: -34.397, lng: 150.644},
+//         scrollwheel: false,
+//         zoom: 8
+//       });
+// }
 
 
 }
