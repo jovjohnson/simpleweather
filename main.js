@@ -4,8 +4,6 @@ $(document).ready(init);
 
 function init() {
 
-  // initMap();
-
   var name;
   var temperature;
   var humidity;
@@ -63,7 +61,6 @@ function init() {
 
     $icon.addClass('wi');
 
-
     $('.temp').append($temp);
 	  $temp.addClass('temperature');
     $('.conditions-space').append($conditions);
@@ -74,15 +71,4 @@ function init() {
       $icon.addClass('wi-day-sunny');
     }
   }
-
-//   function initMap() {
-//   // Create a map object and specify the DOM element for display.
-//       var map = new google.maps.Map(document.getElementById('map'), {
-//         center: {lat: -34.397, lng: 150.644},
-//         scrollwheel: false,
-//         zoom: 8
-//       });
-// }
-
-
 }
